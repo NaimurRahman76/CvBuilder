@@ -1,0 +1,173 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = CV_Maker
+build_property.RootNamespace = CV_Maker
+build_property.ProjectDir = C:\Users\bs780\Desktop\Final Project\CV Maker\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\bs780\Desktop\Final Project\CV Maker
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Account/ConfirmUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDb25maXJtVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Account/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTaWduVXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Account/Success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTdWNjZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/BasicInfo/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFzaWNJbmZvXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/BasicInfo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFzaWNJbmZvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/BasicInfo/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFzaWNJbmZvXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/CustomField/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tRmllbGRcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/CustomField/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tRmllbGRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/CustomField/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tRmllbGRcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/CustomSection/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tU2VjdGlvblxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/CustomSection/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tU2VjdGlvblxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Cv/Check.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3ZcQ2hlY2suY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Cv/Index - Copy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3ZcSW5kZXggLSBDb3B5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Cv/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3ZcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Education/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Education/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Education/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uXFVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Experience/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJpZW5jZVxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Experience/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJpZW5jZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Experience/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJpZW5jZVxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Pdf/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGRmXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Project/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Project/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Project/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Shared/Components/CustomSectionList/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ3VzdG9tU2VjdGlvbkxpc3RcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Shared/_Layout2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Shared/_LoginStatusPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblN0YXR1c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Skill/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2tpbGxcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Skill/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2tpbGxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Skill/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2tpbGxcVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-32acgl5v4g
+
+[C:/Users/bs780/Desktop/Final Project/CV Maker/Views/Shared/_Layout3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-ocqkjayz26

@@ -1,0 +1,90 @@
+﻿@using BusinessObject.ViewModel
+@model CustomFieldView;
+@{
+    Layout = "/Views/Shared/_Layout2.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <h2 class="text-center"> Add Custom Field</h2>
+    </div>
+    <div class="text-danger">
+        @Html.ValidationSummary()
+    </div>
+    <form method="post" enctype="multipart/form-data" class="py-1">
+        <div class="form-group py-2">
+            <label asp-for="@Model.FieldName">Field Name</label>
+            <input asp-for="@Model.FieldName" type="text" class="form-control">
+            <span asp-validation-for="FieldName" class="text-danger"></span>
+        </div>
+        <div class="form-group py-2">
+            <label for="fileType">File Type</label>
+            <select id="fileType" class="form-control">
+                <option>--Select One--</option>
+                <option value="text">Text</option>
+                <option value="textarea">Text Area</option>
+                <option value="number">Number</option>
+                <option value="date">Datetime</option>
+                <option value="file">File</option>
+            </select>
+        </div>
+        <div class="form-group py-2" id="fileInputTextArea" style="display: none;">
+            <label asp-for="@Model.FieldValueText">Text Area Input</label>
+            <textarea asp-for="@Model.FieldValueText" class="form-control"></textarea>
+            <span asp-validation-for="FieldValueText" class="text-danger"></span>
+        </div>
+        <div class="form-group py-2" id="fileInputText" style="display: none;">
+            <label asp-for="@Model.FieldValueString">Text Input</label>
+            <input asp-for="@Model.FieldValueString" type="text" class="form-control">
+            <span asp-validation-for="FieldValueString" class="text-danger"></span>
+        </div>
+
+        <div class="form-group py-2" id="fileInputNumber" style="display: none;">
+            <label asp-for="@Model.FieldValueNumber">Number Input</label>
+            <input asp-for="@Model.FieldValueNumber" type="number" id="fieldValue" class="form-control">
+            <span asp-validation-for="FieldValueNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group py-2" id="fileInputDatetime" style="display: none;">
+            <label asp-for="@Model.FieldValueDate">Datetime Input</label>
+            <input asp-for="@Model.FieldValueDate" type="date" class="form-control">
+            <span asp-validation-for="FieldValueDate" class="text-danger"></span>
+        </div>
+        <div class="form-group py-2" id="fileInputFile" style="display: none;">
+            <label>Image Upload</label>
+            <input name="image" type="file" class="form-control">
+            <span asp-validation-for="FieldValueString" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+        <input type="hidden" name="FieldType" id="fieldTypeHidden" asp-for="@Model.FieldType" />
+        <a class="btn btn-secondary mx-3" asp-controller="CustomField" asp-action="Index">Back</a>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        $('#fileType').change(function () {
+            var selectedFileType = $(this).val();
+            $('#fileInputText,#fileInputTextArea, #fileInputNumber, #fileInputDatetime,#fileInputFile').hide();
+            if (selectedFileType === 'text') {
+                $('#fieldTypeHidden').val('text');
+                $('#fileInputText').show();
+            }
+            else if (selectedFileType === 'textarea') {
+                $('#fieldTypeHidden').val('textarea');
+                $('#fileInputTextArea').show();
+            }
+            else if (selectedFileType === 'number') {
+                $('#fieldTypeHidden').val('number');
+                $('#fileInputNumber').show();
+            }
+            else if (selectedFileType === 'date') {
+                $('#fieldTypeHidden').val('date');
+                $('#fileInputDatetime').show();
+            }
+            else if (selectedFileType === 'file') {
+                $('#fieldTypeHidden').val('file');
+                $('#fileInputFile').show();
+            }
+        });
+    });
+</script>

@@ -1,0 +1,86 @@
+﻿@using BusinessObject.ViewModel
+@model List<CustomFieldView>;
+
+@{
+    Layout = "/Views/Shared/_Layout2.cshtml";
+    var sectionName = Context.Session.GetString("sectionName");
+    var sectionId = Context.Session.GetInt32("sectionId");
+}
+@section Scripts {
+    <script>
+        function confirmDelete(fieldId) {
+            if (confirm("Are you sure you want to delete this Field?")) {
+                window.location.href = '@Url.Action("Delete", "CustomField")?fieldId=' + fieldId ;
+            }
+        }
+    </script>
+}
+<div class="container">
+    <h2 class="text-center">@sectionName Details</h2>
+   
+        @if(Model == null || Model.Count <= 0)
+        {
+            <h5 class="text-center text-danger">No @Context.Session.GetString("sectionName") destails availabel</h5>
+        }
+       
+            <a class="btn btn-primary float-end" asp-controller="CustomField" asp-action="Add">
+                <i class="bi bi-plus-circle"></i>
+            </a>
+
+        <br />
+        <br /> 
+    <div class=" py-1">
+        @if (Model != null &&Model.Count>0) {
+            <ul class="list-group">
+                @foreach (var field in Model)
+                {
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <strong>Field Name:</strong> @field.FieldName
+                                <br>
+                                <strong>Field Type:</strong> @field.FieldType
+                                <br>
+                                @if (field.FieldValueString != null)
+                                {
+                                    @if (field.FieldType == "file")
+                                    {
+                                       <img src="@field.FieldValueString" width="100" height="100">
+                                    }
+                                   else {<strong>Field Value:</strong> @field.FieldValueString}
+                                }
+                                @if (field.FieldValueNumber != null)
+                                {
+                                    <strong>Field Value:</strong> @field.FieldValueNumber
+                                }
+                                @if (field.FieldValueDate != null)
+                                {
+                                    <strong>Field Value:</strong> @field.FieldValueDate
+                                }
+                                @if (field.FieldValueText!= null)
+                                {
+                                    <strong>Field Value:</strong> @field.FieldValueText
+                                }
+                            </div>
+                            <div class="col-md-3">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <a class="btn btn-primary" asp-controller="CustomField" asp-action="Update" asp-route-fieldId="@field.Id">Update</a>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-danger" onclick="confirmDelete(@field.Id)">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <br />
+                }
+            </ul>
+        }
+    </div>
+   
+    
+</div>
+
+

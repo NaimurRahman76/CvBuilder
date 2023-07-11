@@ -1,0 +1,27 @@
+﻿@using BusinessObject.ViewModel;
+@model SkillView
+@{
+    Layout = "/Views/Shared/_Layout2.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <h2 class="text-center">Add New Skill</h2>
+    </div>
+    <div class="text-danger row">
+        @Html.ValidationSummary()
+    </div>
+    <form method="post" class="py-1">
+        <div class="form-group py-2">
+            <label asp-for="@Model.Name">Skill Name</label>
+            <input asp-for="@Model.Name" type="text" class="form-control">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group py-2">
+            <label asp-for="@Model.Level">Skill Level Out of 10</label>
+            <input asp-for="@Model.Level" type="number" class="form-control">
+            <span asp-validation-for="Level" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+        <a class="btn btn-secondary mx-3" asp-controller="Skill" asp-action="Index">Back</a>
+    </form>
+</div>

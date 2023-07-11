@@ -1,0 +1,27 @@
+﻿@section Scripts{
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">Confirm Email</h2>
+    <h4 class="text-center">Please check your email box for the confirmation code</h4>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form method="post">
+                <div class="form-group">
+                    <label >Validation Code:</label>
+                    <input type="number" class="form-control" required name="validationCode">
+                    @if (ViewData["error"] != null)
+                    {
+                      <span class="text-danger">
+                          @ViewData["error"]
+                      </span>
+                    }
+                </div>
+                <input type="hidden" name="email value=@ViewBag.email"/>
+                <button type="submit" class="btn btn-primary mt-3">Confirm</button>
+            </form>
+        </div>
+    </div>
+</div>

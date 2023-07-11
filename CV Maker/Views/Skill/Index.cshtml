@@ -1,0 +1,62 @@
+﻿@using BusinessObject.ViewModel;
+@model List<SkillView>;
+
+@{
+    Layout = "/Views/Shared/_Layout2.cshtml";
+}
+
+@section Scripts {
+    <script>
+        function confirmDelete(skillId) {
+            if (confirm("Are you sure you want to delete this Skill?")) {
+                window.location.href = '@Url.Action("Delete", "Skill")?skillId=' + skillId;
+            }
+        }
+    </script>
+}
+
+<div class="container">
+    <h2 class="text-center">Skill Details</h2>
+    @if (Model == null || Model.Count <= 0)
+    {
+        <h5 class="text-center text-danger">No Skill destails availabel</h5>
+    }
+     <a class="btn btn-primary float-end" asp-controller="Skill" asp-action="Add">
+            <i class="bi bi-plus-circle"></i>
+        </a>
+        <br />
+        <br />
+    <div class=" py-1">
+        @if (Model != null && Model.Count > 0)
+        {
+            <ul class="list-group">
+                @foreach (var skill in Model)
+                {
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <strong>Skill Name:</strong> @skill.Name
+                                <br>
+                                <strong>Skill Rating Out of 10 :</strong> @skill.Level
+                                
+                            </div>
+                            <div class="col-md-3">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <a class="btn btn-primary" asp-controller="Skill" asp-action="Update" asp-route-skillId="@skill.Id">Update</a>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-danger" onclick="confirmDelete(@skill.Id)">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <br />
+                }
+            </ul>
+        }
+    </div>
+   
+</div>
+

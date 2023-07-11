@@ -1,0 +1,142 @@
+﻿@using BusinessObject.ViewModel;
+@model List<CvView>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<style>
+
+.cv-info {
+    display: flex;
+    align-items: center;
+}
+
+.cv-name {
+    margin-right: 10px;
+}
+</style>
+<div class="row">
+    <h5 class="text-danger"> 
+        @Html.ValidationSummary()
+    </h5>
+</div>
+<div>
+    @if (Model == null || Model.Count == 0)
+    {
+        <h1 class="text-center">
+            No CV available for this user. Please create One.
+
+        </h1>
+    }
+    <button class="btn btn-primary float-end" type="button" data-bs-toggle="modal" data-bs-target="#cvModal">
+        <i class="bi bi-plus-circle me-2"></i>Create New CV
+    </button>
+</div>
+
+@if(Model!=null&&Model.Count>0)
+{
+    <div class="container">
+        <div class="row p-3">
+            <div class="col-8">
+                <div class="card-title" style="padding-left:70%;">
+                    <h3>
+                       <i>
+                            All Cv List
+                       </i> 
+                    </h3>
+                </div>
+            </div>
+            
+        </div>
+       
+        <div class="row">
+            @foreach (var name in Model)
+            {
+                <div class="col-4 py-3">
+                    <div class="card" style="width: 20rem;">
+                        <div class="card-icons float-end">
+
+                            <button class="btn float-end p-1 border-0" onclick="confirmDelete(@name.Id)" asp-route-cvId="@name.Id"><i class="mx-3 text-danger float-end bi bi-trash3 fs-3"></i></button>
+                            <button class="btn float-end p-1 border-0" data-bs-toggle="modal" data-bs-target="#updateModal_@name.Id"><i class="mx-3 float-end bi bi-vector-pen fs-3"></i></button>
+                            
+                        </div>
+                        <img src="/images/template.jpg" class="card-img-top" alt="Template Image">
+                        <div class="card-body">
+                            <h5 class="card-title">@name.CvName</h5>
+                            <p class="card-text">This cv is for @name.CvType person</p>
+                            <a asp-controller="Cv" asp-action="Index" asp-route-cvId="@name.Id" asp-route-cvType="@name.CvType" class="btn btn-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+              <div class="modal fade" id="updateModal_@name.Id" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel_@name.Id" aria-hidden="true">
+             <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateModalLabel_@name.Id">Update CV: @name.CvName</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form method="post" id="updateCvForm_@name.Id" asp-controller="Home" asp-action="Update">
+                        <div class="form-group">
+                            <label asp-for="@name.CvName">CV Title</label>
+                            <input type="text" required class="form-control" id="CvTitle"  name="CvName" value="@name.CvName">
+                        </div>
+                        <div class="form-group">
+                            <label for="CvType">Select CV Type</label>
+                            <select name="CvType" required class="form-control">
+                                <option value="">--Select--</option>
+                                 <option value="Non_It" >Non IT</option>
+                                <option value="Experienced_It" >Experienced IT</option>
+                                <option value="Fresher_It">Fresher IT</option>
+                            </select>
+                        </div>
+                        <input type="hidden" value="@name.Id" name="cvId">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+            }
+        </div>
+    </div>
+
+}
+<div id="cvModal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h5 class="modal-title text-center ">Create a New CV</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" id="CvName">
+                    <div class="form-group py-2">
+                        <label for=CvTitle class="mb-2">Cv Title</label>
+                        <input type="text" required class="form-control" id="CvTitle" name="CvTitle"> 
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="cvType" class="mb-2">Select Cv Type</label>
+                        <select name="CvType" required class="form-control mb-2">
+                            <option value="">--Select--</option>
+                            <option value="Non_It">Non It </option>
+                            <option value="Experienced_It">Experienced It </option>
+                            <option value="Fresher_It">Fresher It </option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary py-2 ">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function confirmDelete(cvId){
+        if(confirm("Are you sure you want to delete")){
+            window.location.href = '@Url.Action("Delete","Home")?cvId='+cvId;
+        }
+    }
+</script>

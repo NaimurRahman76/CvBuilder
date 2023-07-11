@@ -1,0 +1,67 @@
+﻿@using BusinessObject.ViewModel
+@model List<ProjelctView>;
+@{
+    Layout = "/Views/Shared/_Layout2.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <h2 class="text-center"> Project List</h2>
+    </div>
+    @if (Model == null || Model.Count <= 0)
+    {
+        <h5 class="text-danger text-center">There is no project for thsi cv</h5>
+    }
+    
+        <a class="btn btn-primary float-end" asp-controller="Project" asp-action="Add">
+            <i class="bi bi-plus-circle"></i>
+        </a>
+    <br />
+    <br />
+     
+     @if(Model!=null){
+        <div class="row">
+            <ul class="list-group">
+                @foreach (var project in Model)
+                {
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <strong>Project Name:</strong> @project.Name
+                                <br>
+                                <strong>Technology Used:</strong> @project.Technology
+                                <br>
+                                <strong>Project Description</strong> @project.Description
+                                <br>
+                                <strong>Your Role</strong> @project.Role
+                                <br>
+                                <strong>Start date:</strong> @project.StartDate.ToString("dd/MM/yyyy")
+                                <br>
+                                <strong> End Date:</strong> @project.EndDate.ToString("dd/MM/yyyy")
+                            </div>
+                            <div class="col-md-3">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <a class="btn btn-primary" asp-controller="Project" asp-action="Update" asp-route-projectId="@project.Id">Update</a>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="btn btn-danger" onclick="confirmDelete(@project.Id)">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </li>
+                    <br />
+                }
+            </ul>
+            
+        </div>
+     }
+
+</div>
+<script>
+    function confirmDelete(projectId) {
+        if (confirm("Are you sure you want to delete this Project?")) {
+            window.location.href = '@Url.Action("Delete", "Project")?projectId=' + projectId;
+        }
+    }
+</script>

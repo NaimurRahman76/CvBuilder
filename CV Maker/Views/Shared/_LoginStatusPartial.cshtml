@@ -1,0 +1,10 @@
+﻿
+@if(User.Identity.IsAuthenticated){
+    <form  >
+        Welcome @User.Identity.Name
+        <a class="btn btn-primary m-2" asp-controller="Account" asp-action="Logout">Logout</a>
+    </form>
+}
+else{
+    <a class="btn btn-primary " asp-controller="Account" asp-action="Login">Login</a>
+}

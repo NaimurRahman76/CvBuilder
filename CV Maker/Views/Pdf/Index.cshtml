@@ -1,0 +1,328 @@
+﻿@using BusinessObject.DataModel;
+@model Cv;
+
+@{
+    Layout = "/Views/Shared/_Layout3.cshtml";
+}
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins',sans-serif;
+    }
+
+    body {
+        background: #f9f9f9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        position: relative;
+        width: 100%;
+        max-width: 1000px;
+        background: #fff;
+        margin: 50px;
+        box-shadow: 0 50px 75px rgba(0,0,0,0.1);
+        border-left: 50px solid #fff;
+        border-right: 50px solid #fff;
+    }
+
+        .container .top {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            padding: 40px;
+            padding-bottom: 0px;
+        }
+
+            .container .top .imgBx {
+                position: relative;
+                width: 100%;
+                display: flex;
+                align-items: center;
+            }
+
+                .container .top .imgBx .box {
+                    position: relative;
+                    width: 70%;
+                    min-width: 200px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    aspect-ratio: 1;
+                }
+
+                    .container .top .imgBx .box img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+            .container .top .profileText {
+                position: relative;
+                padding: 40px;
+                display: flex;
+                align-items: center;
+            }
+
+                .container .top .profileText h3 {
+                    font-size: 3em;
+                    letter-spacing: 0.1em;
+                    line-height: 1.2em;
+                    font-weight: 600;
+                    color: #333;
+                }
+
+        .container .contentBox {
+            position: relative;
+            min-height: 500px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            padding: 0 40px 40px;
+        }
+
+            .container .contentBox h3 {
+                border-left: 4px solid #ff8bb3;
+                padding-left: 10px;
+                line-height: 1em;
+                font-weight: 600;
+                color: #333;
+                letter-spacing: 0.1em;
+                margin-bottom: 20px;
+                margin-top: 50px;
+            }
+
+            .container .contentBox ul {
+                position: relative;
+                margin: 10px 0;
+            }
+
+                .container .contentBox ul li {
+                    list-style: none;
+                    margin: 25px 0;
+                    line-height: 1em;
+                    color: #333;
+                    cursor: pointer;
+                    display: flex;
+                }
+
+                    .container .contentBox ul li ion-icon {
+                        font-size: 1.2em;
+                        margin-right: 10px;
+                        color: #3590d2;
+                    }
+
+                .container .contentBox .education li {
+                    flex-direction: column;
+                    margin: 25px 0;
+                }
+
+    h5 {
+        color: #3590d2;
+    }
+
+    h4 {
+        color: #333;
+        font-weight: 500;
+        margin: 5px 0;
+    }
+
+    h6 {
+        color: #666;
+        font-weight: 300;
+        font-size: 1em;
+    }
+
+    .skill li {
+        flex-direction: column;
+    }
+
+        .skill li span {
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+    .skill .percent {
+        position: relative;
+        width: 100%;
+        background: #e3e3e3;
+        height: 6px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        display: block;
+        overflow: hidden;
+    }
+
+        .skill .percent div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #3590d2;
+        }
+
+    p {
+        font-weight: 300;
+    }
+
+    .rightside {
+        padding-left: 40px;
+    }
+
+    .about .box {
+        display: flex;
+        flex-direction: row;
+        margin: 20px 0;
+    }
+
+        .about .box .year-company {
+            min-width: 150px;
+            margin-bottom: 10px;
+        }
+
+            .about .box .year-company h5 {
+                color: #333;
+                font-weight: 600;
+            }
+
+                .about .box .year-company h5:nth-child(1) {
+                    color: #3590d2;
+                }
+
+        .about .box .text h4 {
+            color: #3590d2;
+            font-size: 16px;
+            margin: 0;
+        }
+</style>
+<button class="btn btn-primary" onclick="Download()">Download</button>
+
+<div class="container" id="cv">
+    <div class="top">
+        <div class="imgBx">
+            <div class="box">
+               @if(Model!=null&&Model.BasicInfo!=null){
+                   <img src="@Model.BasicInfo.Picture"/>
+               }
+            </div>
+        </div>
+        <div class="profileText">
+            @if(Model!=null&&Model.BasicInfo!=null){
+                <h3>@Model.BasicInfo.FullName</h3>
+            }
+        </div>
+    </div>
+    <div class="contentBox">
+        <div class="leftSide">
+            <h3>Contact Info</h3>
+            @if (Model != null && Model.BasicInfo != null)
+            {
+                <ul>
+                    <li>
+                        <span class="icon">
+                            <ion-icon name="call-outline"></ion-icon>
+                        </span>
+                        <span class="text">+8801725204643</span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <span class="text">@Model.BasicInfo.Email</span>
+                    </li>
+                    <li>
+                        <span class="icon">
+                            <ion-icon name="globe-outline"></ion-icon>
+                        </span>
+                        <span class="text">@Model.BasicInfo.Address</span>
+                    </li>
+                </ul>
+            }
+
+            <h3>
+                Education
+            </h3>
+            <ul class="education">
+                @if (Model != null && Model.EducationList != null)
+                {
+                    foreach(var education in Model.EducationList)
+                    {
+                        <li>
+                            <h5>@education.StartDate - @education.EndDate</h5>
+                            <h4>@education.Degree</h4>
+                            <h6>@education.Institution</h6>
+                        </li>
+                    }
+
+                }
+                
+            </ul>
+            <h3>Skill</h3>
+            <ul class="skill">
+                @if(Model!=null && Model.SkillList != null)
+                {
+                    foreach(var skill in Model.SkillList)
+                    {
+                        <li>
+                            <span class="text">
+                                @skill.Name
+                            </span>
+                            <span class="percent">
+                                <div style="width:90%;"></div>
+                            </span>
+                        </li>
+                    }
+                }
+                
+            </ul>
+        </div>
+        <div class="rightside">
+            <div class="about">
+                <h3>Profile</h3>
+                @if(Model!=null && Model.BasicInfo != null)
+                {
+                    <p>@Model.BasicInfo.Biography</p>
+                }
+               
+            </div>
+            <div class="about">
+                @if (Model != null && Model.ExperienceList != null&&Model.ExperienceList.Count>0)
+                {
+                    <h3>Experience</h3>
+                    foreach(var expericen in Model.ExperienceList)
+                    {
+                        <div class="box">
+                            <div class="year-company">
+                                <h5>@expericen.StartDate - @expericen.EndDate</h5>
+                                <h5>@expericen.Company</h5>
+                            </div>
+                            <div class="text">
+                                <h4>@expericen.Position</h4>
+                                <p>
+                                    @expericen.Description
+                                </p>
+                            </div>
+                        </div>
+                    }
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function Download() {
+        const element = document.getElementById("cv");
+        html2pdf().from(element).save();
+    }
+</script>

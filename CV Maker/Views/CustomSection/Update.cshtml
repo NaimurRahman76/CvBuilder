@@ -1,0 +1,28 @@
+﻿@using BusinessObject.ViewModel
+
+@model CustomSectionView
+
+@{
+    Layout = "/Views/Shared/_Layout2.cshtml";
+}
+
+<div class="container">
+    <div class="row py-2">
+        <h2 class="text-center">Updating Section Name</h2>
+    </div>
+    <div class="text-danger">
+        @Html.ValidationSummary()
+    </div>
+    <form method="post"> 
+        <div class="row">
+            <div class="form">
+                <label asp-for="@Model.SectionName" class="py-2 fw-bold"></label>
+                <input asp-for="@Model.SectionName" value="@Model.SectionName" class="form-control"/>
+                <span asp-validation-for="SectionName" class="text-danger"></span>
+                <input type="hidden" asp-for="@Model.Id" value="@Model.Id" />
+                <button type="submit" class="btn btn-primary mt-3">Update</button>
+            </div>
+            
+        </div>
+    </form>
+</div>

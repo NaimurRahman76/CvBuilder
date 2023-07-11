@@ -1,0 +1,152 @@
+﻿
+body {
+    
+    display: flex;
+}
+
+.template-container {
+   
+    position: relative;
+    width:100%;
+    height:100%;
+    background:#7ef699;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    box-shadow: 0 35px 55px rgba(0,0,0,0.1);
+}
+
+    .template-container .left-side {
+        position: relative;
+        background: #003147;
+        padding:30px;
+    }
+
+.profileText {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+    .profileText .imgBx {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+        .profileText .imgBx img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    .profileText h4 {
+        color: #fff;
+        font-size: 1em;
+        margin-top: 20px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 600;
+        line-height: 1.4em;
+    }
+
+        .profileText h4 span {
+            font-size: 0.7em;
+            font-weight: 100;
+        }
+
+.contact-info {
+    padding-top: 20px;
+}
+
+.title {
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size:1em;
+    text-align:center;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.contact-info ul {
+    position: relative;
+    padding: 0;
+}
+
+    .contact-info ul li {
+        position: relative;
+        list-style: none;
+        margin: 1px 0;
+        cursor: pointer;
+    }
+
+        .contact-info ul li .icon {
+            display: inline-block;
+            font-size: .7em;
+            color: #03a9f4;
+        }
+
+        .contact-info ul li span {
+            color: #fff;
+            font-size:.7em;
+        }
+
+.contact-info .skill .percent {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    background: #fd0b0b;
+    display: block;
+    margin-top: 5px;
+}
+
+    .contact-info .skill .percent div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: #1978ed;
+    }
+
+.contact-info .skill .percent div::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 0;
+   background: #1978ed;
+   transition: width 0.5s ease;
+}
+
+.contact-info .skill li:hover .percent div::before {
+    width: 100%;
+}
+.progress-container{
+    display:flex;
+    align-items:center;
+    height:10px;
+}
+.progress-container .progress-bar{
+    color:#fff;
+    height:10px;
+}
+.template-container .right-side {
+    position: relative;
+    background: #fff;
+    padding-left:20px;
+}
+.biography-title{
+    font-size:1em;
+    margin:0;
+    padding:0;
+
+}

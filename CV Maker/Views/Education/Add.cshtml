@@ -1,0 +1,37 @@
+﻿@using BusinessObject.ViewModel;
+@model EducationView
+@{
+    Layout = "/Views/Shared/_Layout2.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <h2 class="text-center">Education form</h2>
+    </div>
+    <div class="row text-danger">
+        @Html.ValidationSummary()
+    </div>
+    <form method="post" class="py-1" >
+        <div class="form-group py-2">
+            <label asp-for="@Model.Degree">Degree Name</label>
+            <input asp-for="@Model.Degree" type="text" class="form-control">
+            <span asp-validation-for="Degree" class="text-danger"></span>
+        </div>
+        <div class="form-group py-2">
+            <label asp-for="@Model.Institution">Institution Name</label>
+            <input asp-for="@Model.Institution" type="text" class="form-control">
+            <span asp-validation-for="Institution" class="text-danger"></span>
+        </div>
+        <div class="form-group py-2">
+            <label asp-for="@Model.StartDate">Start Date</label>
+            <input asp-for="@Model.StartDate" type="date" class="form-control">
+            <span asp-validation-for="StartDate" class="text-danger"></span>
+        </div>
+        <div class="form-group py-2">
+            <label asp-for="@Model.EndDate">End Date</label>
+            <input asp-for="@Model.EndDate" class="form-control" type="date">
+            <span asp-validation-for="EndDate" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+        <a asp-controller="Education" asp-action="Index" class="mx-3 btn btn-secondary">Back</a>
+    </form>
+</div>

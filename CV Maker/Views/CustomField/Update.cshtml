@@ -1,0 +1,84 @@
+﻿@using BusinessObject.ViewModel
+@model CustomFieldView
+
+@{
+    Layout = "/Views/Shared/_Layout2.cshtml";
+}
+
+
+<div class="container">
+    <div class="row">
+        <h2 class="text-center">Updating @Context.Session.GetString("sectionName") </h2>
+    </div>
+    <form method="post" enctype="multipart/form-data" >
+        <div calss="form-group">
+            <label asp-for="@Model.FieldName"> <b>Field Name</b></label>
+            <input asp-for="@Model.FieldName" class="form-control" type="text" value="@Model.FieldName" />
+            <span asp-validation-for="FieldName" class="text-danger"></span>
+        </div>
+        <br />
+        @if (Model.FieldType == "textarea")
+        {
+            <div calss="form-group">
+                <label asp-for="@Model.FieldValueText"> <b>Field Value</b></label>
+                <textarea asp-for="@Model.FieldValueText" value="@Model.FieldValueText" class="form-control"></textarea>
+                <span asp-validation-for="FieldValueText" class="text-danger"></span>
+            </div>
+        }
+        else if (Model.FieldType=="date")
+        {
+            <div calss="form-group">
+                <label asp-for="@Model.FieldValueDate"> <b>Field Value</b></label>
+                <input asp-for="@Model.FieldValueDate" class="form-control" type="date" value="@Model.FieldValueDate" />
+                <span asp-validation-for="FieldValueDate" class="text-danger"></span>
+            </div>
+        }
+        else if (Model.FieldType == "text")
+        {
+            <div calss="form-group">
+                <label asp-for="@Model.FieldValueString"> <b>Field Value</b></label>
+                <input asp-for="@Model.FieldValueString" class="form-control" type="text" value="@Model.FieldValueString" />
+                <span asp-validation-for="FieldValueString" class="text-danger"></span>
+            </div>
+        }
+        else if (Model.FieldType == "number")
+            {
+                <div calss="form-group">
+                    <label asp-for="@Model.FieldValueNumber"> <b>Field Value</b></label>
+                    <input asp-for="@Model.FieldValueNumber" class="form-control" type="text" value="@Model.FieldValueNumber" />
+                <span asp-validation-for="FieldValueNumber" class="text-danger"></span>
+                </div>
+            }
+        else if (Model.FieldType == "file")
+        {
+            <div calss="form-group">
+                <div class="row">
+                    <div class="col">
+                        <p><b>Current Image </b></p>
+                    </div>
+                    <div class="col-md-9 ">
+                        <img src="/@Model.FieldValueString" width="100" height="100">
+                        <br>
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col">
+                        <p><b>Upload a new Image</b></p>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="file" name="image" class="form-control" />
+                        <span asp-validation-for="FieldValueString" class="text-danger"></span>
+                    </div>
+                </div>
+                
+            </div>
+        }
+        <input asp-for="@Model.Id" value="@Model.Id" type="hidden"/>
+        <input asp-for="@Model.FieldType" value="@Model.FieldType" type="hidden"/>
+     
+        <br />
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+

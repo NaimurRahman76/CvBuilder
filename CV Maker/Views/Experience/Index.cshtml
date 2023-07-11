@@ -1,0 +1,61 @@
+﻿@using BusinessObject.ViewModel;
+@model List<ExperienceView>;
+@{
+    Layout = "/Views/Shared/_Layout2.cshtml";
+}
+
+@section Scripts {
+    <script>
+        function confirmDelete(experienceId) {
+            if (confirm("Are you sure you want to delete this Experience?")) 
+            {
+                window.location.href = '@Url.Action("Delete", "Experience")?experienceId=' + experienceId;
+            }
+        }
+    </script>
+}
+
+<div class="container">
+
+    <h2 class="text-center">Experience Deatails</h2>
+
+    <div  class=" py-1">
+        @if (Model == null|| Model.Count <= 0)
+        {
+            <h5 class="text-center text-danger">No experience availabel</h5>
+        }
+        <a class="btn btn-primary float-end" asp-controller="Experience" asp-action="Add">
+            <i class="bi bi-plus-circle"></i>
+        </a>
+        <br />
+        <br />
+        @if(Model!=null &&Model.Count>0)
+        {
+            <ul class="list-group">
+                @foreach(var experience in Model)
+                {
+                    <li class="list-group-item"> 
+                        <div class="row">
+                            <div class="col-md-9">
+                                <strong >Company Name : </strong> @experience.Company <br>
+                               
+                                <strong>Postion : </strong> @experience.Position <br>
+
+                                <strong>Worked description : </strong > @experience.Description<br>
+
+                                <strong>Started Date : </strong> @experience.StartDate.ToString("dd/MM/yyyy")<br>
+
+                                <strong>End Date : </strong> @experience.EndDate.ToString("dd/MM/yyyy")<br>
+                            </div>
+                             <div class="col-md-3">
+                                <a class="btn btn-primary" asp-controller="Experience" asp-action="Update" asp-route-experienceId="@experience.Id">Update</a>
+                                <button class="btn btn-danger" onclick="confirmDelete(@experience.Id)">Delete</button>
+                             </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+
+</div>

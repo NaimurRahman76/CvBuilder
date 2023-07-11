@@ -1,0 +1,36 @@
+﻿@using BusinessObject.ViewModel;
+@model LoginView;
+
+<div class="container m-5">
+    <div class="row text-center">
+        <h3>Please Login </h3>
+    </div>
+    <div class="row p-lg-5">
+        <div class="title text-danger">
+            @ViewData["error"]
+        </div>
+        <form method="post">
+            <div class="form-group pb-4">
+                <label asp-for="@Model.Email">
+                    Email
+                </label>
+                <input  asp-for="@Model.Email" class="form-control" placeholder="Input your Email Address"/>
+                <span class="text-danger" asp-validation-for="@Model.Email"></span>
+            </div>
+            <div class="form-group pb-3">
+                <label asp-for="@Model.Password">
+                    Password
+                </label>
+                <input  asp-for="@Model.Password" class="form-control" placeholder="Input your Password"/>
+                <span class="text-danger" asp-validation-for="@Model.Password" ></span>
+                <input type="checkbox"  asp-for="@Model.RememberMe" class="pt-2"/>
+                <label asp-for="@Model.RememberMe"></label>
+            </div>
+            <button type="submit" class="btn btn-primary align-content-center">Login</button>
+        </form>
+        <div class="pb-2">
+
+            New here <a asp-controller="Account" asp-action="SignUp">Sign Up</a>
+        </div>
+    </div>
+</div>
