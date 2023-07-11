@@ -20,7 +20,7 @@ git clone https://github.com/NaimurRahman76/CvBuilder.git
 
 - Launch Visual Studio.
 - Select "Open a project or solution" from the start menu or go to "File" > "Open" > "Project/Solution".
-- Navigate to the cloned project directory and select the solution file (`CvBuilder.sln`).
+- Navigate to the cloned project directory and select the solution file (`Cv Maker.sln`).
 - Click "Open" to load the project in Visual Studio.
 
 3. Configure the database connection string:
